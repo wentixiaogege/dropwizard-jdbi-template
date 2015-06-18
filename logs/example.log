@@ -1,0 +1,161 @@
+INFO  [2015-06-17 21:48:28,144] org.chinthaka.dropwizard.MyApplication: User table created
+INFO  [2015-06-17 21:48:28,152] io.dropwizard.server.ServerFactory: Starting My Application
+.##.....##.##....##.......###....########..########..##.......####..######.....###....########.####..#######..##....##
+.###...###..##..##.......##.##...##.....##.##.....##.##........##..##....##...##.##......##.....##..##.....##.###...##
+.####.####...####.......##...##..##.....##.##.....##.##........##..##........##...##.....##.....##..##.....##.####..##
+.##.###.##....##.......##.....##.########..########..##........##..##.......##.....##....##.....##..##.....##.##.##.##
+.##.....##....##.......#########.##........##........##........##..##.......#########....##.....##..##.....##.##..####
+.##.....##....##.......##.....##.##........##........##........##..##....##.##.....##....##.....##..##.....##.##...###
+.##.....##....##.......##.....##.##........##........########.####..######..##.....##....##....####..#######..##....##
+INFO  [2015-06-17 21:48:28,230] org.eclipse.jetty.setuid.SetUIDListener: Opened application@6124287a{HTTP/1.1}{0.0.0.0:8080}
+INFO  [2015-06-17 21:48:28,230] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@14fc5d40{HTTP/1.1}{0.0.0.0:8081}
+INFO  [2015-06-17 21:48:28,235] org.eclipse.jetty.server.Server: jetty-9.0.7.v20131107
+INFO  [2015-06-17 21:48:28,342] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-06-17 21:48:28,408] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    DELETE  /user/{userId} (org.chinthaka.dropwizard.resources.UserResourceImpl)
+    GET     /user/{userId} (org.chinthaka.dropwizard.resources.UserResourceImpl)
+    PUT     /user (org.chinthaka.dropwizard.resources.UserResourceImpl)
+
+INFO  [2015-06-17 21:48:28,616] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@3b00856b{/,null,AVAILABLE}
+INFO  [2015-06-17 21:48:28,620] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2015-06-17 21:48:28,627] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@6c45ee6e{/,null,AVAILABLE}
+INFO  [2015-06-17 21:48:28,636] org.eclipse.jetty.server.ServerConnector: Started application@6124287a{HTTP/1.1}{0.0.0.0:8080}
+INFO  [2015-06-17 21:48:28,639] org.eclipse.jetty.server.ServerConnector: Started admin@14fc5d40{HTTP/1.1}{0.0.0.0:8081}
+INFO  [2015-06-17 21:48:29,118] org.eclipse.jetty.server.ServerConnector: Stopped application@6124287a{HTTP/1.1}{0.0.0.0:8080}
+INFO  [2015-06-17 21:48:29,127] org.eclipse.jetty.server.ServerConnector: Stopped admin@14fc5d40{HTTP/1.1}{0.0.0.0:8081}
+INFO  [2015-06-17 21:48:29,130] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@6c45ee6e{/,null,UNAVAILABLE}
+INFO  [2015-06-17 21:48:29,132] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@3b00856b{/,null,UNAVAILABLE}
+INFO  [2015-06-17 22:08:22,254] org.chinthaka.dropwizard.MyApplication: User table already exists.
+INFO  [2015-06-17 22:08:22,263] io.dropwizard.server.ServerFactory: Starting My Application
+.##.....##.##....##.......###....########..########..##.......####..######.....###....########.####..#######..##....##
+.###...###..##..##.......##.##...##.....##.##.....##.##........##..##....##...##.##......##.....##..##.....##.###...##
+.####.####...####.......##...##..##.....##.##.....##.##........##..##........##...##.....##.....##..##.....##.####..##
+.##.###.##....##.......##.....##.########..########..##........##..##.......##.....##....##.....##..##.....##.##.##.##
+.##.....##....##.......#########.##........##........##........##..##.......#########....##.....##..##.....##.##..####
+.##.....##....##.......##.....##.##........##........##........##..##....##.##.....##....##.....##..##.....##.##...###
+.##.....##....##.......##.....##.##........##........########.####..######..##.....##....##....####..#######..##....##
+WARN  [2015-06-17 22:08:22,363] org.eclipse.jetty.util.component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@4a183d02: java.lang.RuntimeException: java.net.BindException: Address already in use
+! java.net.BindException: Address already in use
+! at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_40]
+! at sun.nio.ch.Net.bind(Net.java:437) ~[na:1.8.0_40]
+! at sun.nio.ch.Net.bind(Net.java:429) ~[na:1.8.0_40]
+! at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_40]
+! at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_40]
+! at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:264) ~[jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:200) ~[jetty-setuid-java-1.0.2.jar:na]
+! ... 16 common frames omitted
+! Causing: java.lang.RuntimeException: java.net.BindException: Address already in use
+! at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:213) ~[jetty-setuid-java-1.0.2.jar:na]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.setStarting(AbstractLifeCycle.java:187) ~[jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) ~[jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.cli.ServerCommand.run(ServerCommand.java:43) [dropwizard-core-0.7.1.jar:0.7.1]
+! at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:43) [dropwizard-core-0.7.1.jar:0.7.1]
+! at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:76) [dropwizard-core-0.7.1.jar:0.7.1]
+! at io.dropwizard.testing.junit.DropwizardAppRule.startIfRequired(DropwizardAppRule.java:107) [dropwizard-testing-0.7.1.jar:0.7.1]
+! at io.dropwizard.testing.junit.DropwizardAppRule.access$000(DropwizardAppRule.java:30) [dropwizard-testing-0.7.1.jar:0.7.1]
+! at io.dropwizard.testing.junit.DropwizardAppRule$1.evaluate(DropwizardAppRule.java:55) [dropwizard-testing-0.7.1.jar:0.7.1]
+! at org.junit.rules.RunRules.evaluate(RunRules.java:20) [junit-4.11.jar:na]
+! at org.junit.runners.ParentRunner.run(ParentRunner.java:309) [junit-4.11.jar:na]
+! at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:na]
+ERROR [2015-06-17 22:08:22,364] io.dropwizard.cli.ServerCommand: Unable to start server, shutting down
+! java.net.BindException: Address already in use
+! at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_40]
+! at sun.nio.ch.Net.bind(Net.java:437) ~[na:1.8.0_40]
+! at sun.nio.ch.Net.bind(Net.java:429) ~[na:1.8.0_40]
+! at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_40]
+! at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_40]
+! at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:264) ~[jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:200) ~[jetty-setuid-java-1.0.2.jar:na]
+! ... 16 common frames omitted
+! Causing: java.lang.RuntimeException: java.net.BindException: Address already in use
+! at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:213) ~[jetty-setuid-java-1.0.2.jar:na]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.setStarting(AbstractLifeCycle.java:187) ~[jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) ~[jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.cli.ServerCommand.run(ServerCommand.java:43) ~[dropwizard-core-0.7.1.jar:0.7.1]
+! at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:43) [dropwizard-core-0.7.1.jar:0.7.1]
+! at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:76) [dropwizard-core-0.7.1.jar:0.7.1]
+! at io.dropwizard.testing.junit.DropwizardAppRule.startIfRequired(DropwizardAppRule.java:107) [dropwizard-testing-0.7.1.jar:0.7.1]
+! at io.dropwizard.testing.junit.DropwizardAppRule.access$000(DropwizardAppRule.java:30) [dropwizard-testing-0.7.1.jar:0.7.1]
+! at io.dropwizard.testing.junit.DropwizardAppRule$1.evaluate(DropwizardAppRule.java:55) [dropwizard-testing-0.7.1.jar:0.7.1]
+! at org.junit.rules.RunRules.evaluate(RunRules.java:20) [junit-4.11.jar:na]
+! at org.junit.runners.ParentRunner.run(ParentRunner.java:309) [junit-4.11.jar:na]
+! at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:na]
+INFO  [2015-06-17 22:08:42,856] org.chinthaka.dropwizard.MyApplication: User table already exists.
+INFO  [2015-06-17 22:08:42,866] io.dropwizard.server.ServerFactory: Starting My Application
+.##.....##.##....##.......###....########..########..##.......####..######.....###....########.####..#######..##....##
+.###...###..##..##.......##.##...##.....##.##.....##.##........##..##....##...##.##......##.....##..##.....##.###...##
+.####.####...####.......##...##..##.....##.##.....##.##........##..##........##...##.....##.....##..##.....##.####..##
+.##.###.##....##.......##.....##.########..########..##........##..##.......##.....##....##.....##..##.....##.##.##.##
+.##.....##....##.......#########.##........##........##........##..##.......#########....##.....##..##.....##.##..####
+.##.....##....##.......##.....##.##........##........##........##..##....##.##.....##....##.....##..##.....##.##...###
+.##.....##....##.......##.....##.##........##........########.####..######..##.....##....##....####..#######..##....##
+WARN  [2015-06-17 22:08:42,969] org.eclipse.jetty.util.component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@35e478f: java.lang.RuntimeException: java.net.BindException: Address already in use
+! java.net.BindException: Address already in use
+! at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_40]
+! at sun.nio.ch.Net.bind(Net.java:437) ~[na:1.8.0_40]
+! at sun.nio.ch.Net.bind(Net.java:429) ~[na:1.8.0_40]
+! at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_40]
+! at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_40]
+! at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:264) ~[jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:200) ~[jetty-setuid-java-1.0.2.jar:na]
+! ... 16 common frames omitted
+! Causing: java.lang.RuntimeException: java.net.BindException: Address already in use
+! at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:213) ~[jetty-setuid-java-1.0.2.jar:na]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.setStarting(AbstractLifeCycle.java:187) ~[jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) ~[jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.cli.ServerCommand.run(ServerCommand.java:43) [dropwizard-core-0.7.1.jar:0.7.1]
+! at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:43) [dropwizard-core-0.7.1.jar:0.7.1]
+! at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:76) [dropwizard-core-0.7.1.jar:0.7.1]
+! at io.dropwizard.testing.junit.DropwizardAppRule.startIfRequired(DropwizardAppRule.java:107) [dropwizard-testing-0.7.1.jar:0.7.1]
+! at io.dropwizard.testing.junit.DropwizardAppRule.access$000(DropwizardAppRule.java:30) [dropwizard-testing-0.7.1.jar:0.7.1]
+! at io.dropwizard.testing.junit.DropwizardAppRule$1.evaluate(DropwizardAppRule.java:55) [dropwizard-testing-0.7.1.jar:0.7.1]
+! at org.junit.rules.RunRules.evaluate(RunRules.java:20) [junit-4.11.jar:na]
+! at org.junit.runners.ParentRunner.run(ParentRunner.java:309) [junit-4.11.jar:na]
+! at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:na]
+ERROR [2015-06-17 22:08:42,969] io.dropwizard.cli.ServerCommand: Unable to start server, shutting down
+! java.net.BindException: Address already in use
+! at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_40]
+! at sun.nio.ch.Net.bind(Net.java:437) ~[na:1.8.0_40]
+! at sun.nio.ch.Net.bind(Net.java:429) ~[na:1.8.0_40]
+! at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_40]
+! at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_40]
+! at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:264) ~[jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:200) ~[jetty-setuid-java-1.0.2.jar:na]
+! ... 16 common frames omitted
+! Causing: java.lang.RuntimeException: java.net.BindException: Address already in use
+! at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:213) ~[jetty-setuid-java-1.0.2.jar:na]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.setStarting(AbstractLifeCycle.java:187) ~[jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68) ~[jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.cli.ServerCommand.run(ServerCommand.java:43) ~[dropwizard-core-0.7.1.jar:0.7.1]
+! at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:43) [dropwizard-core-0.7.1.jar:0.7.1]
+! at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:76) [dropwizard-core-0.7.1.jar:0.7.1]
+! at io.dropwizard.testing.junit.DropwizardAppRule.startIfRequired(DropwizardAppRule.java:107) [dropwizard-testing-0.7.1.jar:0.7.1]
+! at io.dropwizard.testing.junit.DropwizardAppRule.access$000(DropwizardAppRule.java:30) [dropwizard-testing-0.7.1.jar:0.7.1]
+! at io.dropwizard.testing.junit.DropwizardAppRule$1.evaluate(DropwizardAppRule.java:55) [dropwizard-testing-0.7.1.jar:0.7.1]
+! at org.junit.rules.RunRules.evaluate(RunRules.java:20) [junit-4.11.jar:na]
+! at org.junit.runners.ParentRunner.run(ParentRunner.java:309) [junit-4.11.jar:na]
+! at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:na]
+! at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:na]

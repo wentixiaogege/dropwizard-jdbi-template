@@ -21,6 +21,8 @@ import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.jdbi.DBIFactory;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+
+import org.chinthaka.dropwizard.health.DatabaseHealthCheck;
 import org.chinthaka.dropwizard.jdbi.dao.UserDAO;
 import org.chinthaka.dropwizard.resources.UserResourceImpl;
 import org.skife.jdbi.v2.DBI;
@@ -72,6 +74,12 @@ public class MyApplication extends Application<MyApplicationConfiguration> {
             }
 
         }
+        //add health check
+        
+        DatabaseHealthCheck healthCheck = new DatabaseHealthCheck(jdbi, dataSourceFactory);
+        
+        environment.healthChecks().register("DatabaseHealthCheck", healthCheck);
+        
         environment.jersey().register(new UserResourceImpl(dao));
 
     }

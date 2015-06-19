@@ -36,7 +36,7 @@ public class UserResourceTest {
 
     @ClassRule
     public static final DropwizardAppRule<MyApplicationConfiguration> RULE =
-            new DropwizardAppRule<>(MyApplication.class, "myapp.yaml");
+            new DropwizardAppRule<>(MyApplication.class, "config.yml");
 
     private final User sampleUser = new User("1234", "Example User", "Ambalangoda");
 

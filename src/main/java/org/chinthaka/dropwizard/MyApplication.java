@@ -58,7 +58,8 @@ public class MyApplication extends Application<MyApplicationConfiguration> {
         // create database connection using JDBI
         final DBIFactory factory = new DBIFactory();
         final DataSourceFactory dataSourceFactory = configuration.getDataSourceFactory();
-        final DBI jdbi = factory.build(environment, dataSourceFactory, "derby");
+//        final DBI jdbi = factory.build(environment, dataSourceFactory, "derby");
+        final DBI jdbi = factory.build(environment, dataSourceFactory, "mysql");
 
         // add resources
         final UserDAO dao = jdbi.onDemand(UserDAO.class);

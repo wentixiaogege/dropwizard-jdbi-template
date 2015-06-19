@@ -23,5 +23,8 @@ To start the server,
 The server will start at port 8080. You can use UserResourceClient to interact with it. You can also get into admin interface by going to http://localhost:8081
 
 //add user
-curl -i -X POST -H "Content-Type: application/json" -d '{"id":1,"name":"jack","city":"San Jose"}' http://localhost:8080/user
+curl -i -X PUT -H "Content-Type: application/json" -d '{"id":1,"name":"jack","city":"San Jose"}' http://localhost:8080/user
+
+//get user
+curl -i -X GET -H "Content-Type: application/json"  http://localhost:8080/user/1
 

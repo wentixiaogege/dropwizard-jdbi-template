@@ -19,6 +19,7 @@ package org.chinthaka.dropwizard.api;
 import org.chinthaka.dropwizard.api.beans.User;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 
 /**
  * User: Eran Withana
@@ -28,14 +29,16 @@ import javax.ws.rs.*;
 public interface UserResource {
 
     @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
     public void addUser(final User user);
 
     @GET
     @Path("/{userId}")
+    @Produces(MediaType.APPLICATION_JSON)
     public User getUserById(@PathParam("userId") final String userId);
 
     @DELETE
     @Path("/{userId}")
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     public void removeUser(@PathParam("userId") final String userId);
 }

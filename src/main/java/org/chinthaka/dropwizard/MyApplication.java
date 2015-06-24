@@ -22,13 +22,15 @@ import io.dropwizard.jdbi.DBIFactory;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import org.chinthaka.dropwizard.health.DatabaseHealthCheck;
 import org.chinthaka.dropwizard.jdbi.dao.UserDAO;
 import org.chinthaka.dropwizard.resources.UserResourceImpl;
 import org.skife.jdbi.v2.DBI;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import de.spinscale.dropwizard.jobs.JobsBundle;
 
 /**
  * User: Eran Withana
@@ -49,7 +51,7 @@ public class MyApplication extends Application<MyApplicationConfiguration> {
 
     @Override
     public void initialize(Bootstrap<MyApplicationConfiguration> bootstrap) {
-
+    	bootstrap.addBundle(new JobsBundle("org.chinthaka.dropwizard.jobs"));
     }
 
     public void run(MyApplicationConfiguration configuration,

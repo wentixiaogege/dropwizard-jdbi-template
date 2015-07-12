@@ -34,7 +34,7 @@ public interface UserDAO {
     // NOTE: User is a reserved keyword in Derby
     public static final String USER_TABLE = "AppUser";
 
-    @SqlUpdate("create table " + USER_TABLE + " (id varchar(100), name varchar(100), city varchar(100))")
+    @SqlUpdate("create table " + USER_TABLE + " (id varchar(100), name varchar(100), city varchar(100),PRIMARY KEY (`id`))")
     void createUserTable();
 
     @SqlUpdate("insert into " + USER_TABLE + " (id, name, city) values (:id, :name, :city)")

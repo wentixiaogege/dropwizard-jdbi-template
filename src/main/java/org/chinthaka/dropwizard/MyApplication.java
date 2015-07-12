@@ -19,18 +19,24 @@ package org.chinthaka.dropwizard;
 import io.dropwizard.Application;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.jdbi.DBIFactory;
+import io.dropwizard.lifecycle.ServerLifecycleListener;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
+import java.util.concurrent.ExecutorService;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.chinthaka.dropwizard.health.DatabaseHealthCheck;
 import org.chinthaka.dropwizard.jdbi.dao.UserDAO;
 import org.chinthaka.dropwizard.resources.UserResourceImpl;
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.util.component.LifeCycle;
 import org.skife.jdbi.v2.DBI;
 
-import de.spinscale.dropwizard.jobs.JobsBundle;
+import com.xeiam.dropwizard.sundial.SundialBundle;
+import com.xeiam.dropwizard.sundial.SundialConfiguration;
+
 
 /**
  * User: Eran Withana
@@ -51,7 +57,13 @@ public class MyApplication extends Application<MyApplicationConfiguration> {
 
     @Override
     public void initialize(Bootstrap<MyApplicationConfiguration> bootstrap) {
-    	bootstrap.addBundle(new JobsBundle("org.chinthaka.dropwizard.jobs"));
+    	bootstrap.addBundle(new SundialBundle<MyApplicationConfiguration>() {
+
+    	      @Override
+    	      public SundialConfiguration getSundialConfiguration(MyApplicationConfiguration configuration) {
+    	        return configuration.getSundialConfiguration();
+    	      }
+    	    });
     }
 
     public void run(MyApplicationConfiguration configuration,
@@ -77,14 +89,33 @@ public class MyApplication extends Application<MyApplicationConfiguration> {
             }
 
         }
+        
+        UserResourceImpl userResourceImpl = new UserResourceImpl(dao);
+        environment.getApplicationContext().setAttribute("MyKey", userResourceImpl);
         //add health check
         
         DatabaseHealthCheck healthCheck = new DatabaseHealthCheck(jdbi, dataSourceFactory);
         
         environment.healthChecks().register("DatabaseHealthCheck", healthCheck);
         
-        environment.jersey().register(new UserResourceImpl(dao));
+        environment.jersey().register(userResourceImpl);
+        
 
+        final ExecutorService executorService = environment.lifecycle().executorService("executorService").minThreads(4).maxThreads(10).build();
+    
+        environment.getApplicationContext().setAttribute("ExecutorService", executorService);
+    
+        
+        environment.lifecycle().addServerLifecycleListener(new ServerLifecycleListener() {
+			
+			@Override
+			public void serverStarted(Server server) {
+				// TODO Auto-generated method stub
+				
+			}
+		} );
+        
+//        ServletContext
     }
 
 }

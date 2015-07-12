@@ -5,7 +5,7 @@ sundial:
   start-delay-seconds: 0
   start-scheduler-on-load: true
   global-lock-on-load: false
-  annotated-jobs-package-name: org.chinthaka.dropwizard.jobs
+  annotated-jobs-package-name: com.xeiam.xdropwizard.jobs
 
 # Database settings.
 database:

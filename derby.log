@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Wed Jun 24 10:46:26 PDT 2015:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-014e-26ad-9442-0000057aadd0 
-on database directory E:\Workspace\Eclipse\dropwizard-jdbi-template\derbyDB with class loader sun.misc.Launcher$AppClassLoader@42a57993 
-Loaded from file:/C:/Users/Jack/.m2/repository/org/apache/derby/derby/10.10.2.0/derby-10.10.2.0.jar
+Sat Jul 11 16:57:02 PDT 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-014e-7f8c-f8ab-000006e8a5a0 
+on database directory /home/jack/CourseProject/dropwizard-jdbi-template/derbyDB with class loader sun.misc.Launcher$AppClassLoader@42a57993 
+Loaded from file:/home/jack/.m2/repository/org/apache/derby/derby/10.10.2.0/derby-10.10.2.0.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_45-b15
-user.dir=E:\Workspace\Eclipse\dropwizard-jdbi-template
-os.name=Windows 7
+java.runtime.version=1.8.0_40-b26
+user.dir=/home/jack/CourseProject/dropwizard-jdbi-template
+os.name=Linux
 os.arch=amd64
-os.version=6.1
+os.version=3.13.0-32-generic
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''

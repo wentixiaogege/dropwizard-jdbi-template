@@ -48,7 +48,15 @@ public class User {
         return city;
     }
 
-    @Override
+    /* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", city=" + city + "]";
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof User)) return false;

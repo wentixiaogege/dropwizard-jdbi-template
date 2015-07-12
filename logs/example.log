@@ -1,6 +1,40 @@
-INFO  [2015-06-24 17:46:26,316] org.reflections.Reflections: Reflections took 78 ms to scan 1 urls, producing 3 keys and 4 values 
-INFO  [2015-06-24 17:46:44,320] org.chinthaka.dropwizard.MyApplication: User table created
-INFO  [2015-06-24 17:46:44,336] io.dropwizard.server.ServerFactory: Starting My Application
+INFO  [2015-07-12 07:45:28,445] org.eclipse.jetty.util.log: Logging initialized @1274ms
+INFO  [2015-07-12 07:45:29,197] org.chinthaka.dropwizard.MyApplication: User DB was not created
+! com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'AppUser' already exists
+! at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_40]
+! at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_40]
+! at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_40]
+! at java.lang.reflect.Constructor.newInstance(Constructor.java:422) ~[na:1.8.0_40]
+! at com.mysql.jdbc.Util.handleNewInstance(Util.java:406) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at com.mysql.jdbc.Util.getInstance(Util.java:381) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1030) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:956) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3491) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3423) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1936) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2060) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2542) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1734) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:995) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at org.skife.jdbi.v2.SQLStatement.internalExecute(SQLStatement.java:1328) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! ... 13 common frames omitted
+! Causing: org.skife.jdbi.v2.exceptions.UnableToExecuteStatementException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'AppUser' already exists [statement:"create table AppUser (id varchar(100), name varchar(100), city varchar(100),PRIMARY KEY (`id`))", located:"create table AppUser (id varchar(100), name varchar(100), city varchar(100),PRIMARY KEY (`id`))", rewritten:"/* UserDAO.createUserTable */ create table AppUser (id varchar(100), name varchar(100), city varchar(100),PRIMARY KEY (`id`))", arguments:{ positional:{}, named:{}, finder:[]}]
+! at org.skife.jdbi.v2.SQLStatement.internalExecute(SQLStatement.java:1334) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at org.skife.jdbi.v2.Update.execute(Update.java:56) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at org.skife.jdbi.v2.sqlobject.UpdateHandler$2.value(UpdateHandler.java:62) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at org.skife.jdbi.v2.sqlobject.UpdateHandler.invoke(UpdateHandler.java:75) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at org.skife.jdbi.v2.sqlobject.SqlObject.invoke(SqlObject.java:175) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at org.skife.jdbi.v2.sqlobject.SqlObject$1.intercept(SqlObject.java:75) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at org.skife.jdbi.v2.sqlobject.CloseInternalDoNotUseThisClass$$EnhancerByCGLIB$$79943c30.createUserTable(<generated>) ~[dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at org.chinthaka.dropwizard.MyApplication.run(MyApplication.java:81) [dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at org.chinthaka.dropwizard.MyApplication.run(MyApplication.java:1) [dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:42) [dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:76) [dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at io.dropwizard.cli.Cli.run(Cli.java:70) [dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at io.dropwizard.Application.run(Application.java:73) [dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+! at org.chinthaka.dropwizard.MyApplication.main(MyApplication.java:49) [dropwizard-jdbi-template-1.0-SNAPSHOT.jar:na]
+WARN  [2015-07-12 07:45:29,215] io.dropwizard.lifecycle.setup.ExecutorServiceBuilder: Parameter 'maximumPoolSize' is conflicting with unbounded work queues
+INFO  [2015-07-12 07:45:29,231] io.dropwizard.server.ServerFactory: Starting My Application
 .##.....##.##....##.......###....########..########..##.......####..######.....###....########.####..#######..##....##
 .###...###..##..##.......##.##...##.....##.##.....##.##........##..##....##...##.##......##.....##..##.....##.###...##
 .####.####...####.......##...##..##.....##.##.....##.##........##..##........##...##.....##.....##..##.....##.####..##
@@ -8,47 +42,44 @@ INFO  [2015-06-24 17:46:44,336] io.dropwizard.server.ServerFactory: Starting My 
 .##.....##....##.......#########.##........##........##........##..##.......#########....##.....##..##.....##.##..####
 .##.....##....##.......##.....##.##........##........##........##..##....##.##.....##....##.....##..##.....##.##...###
 .##.....##....##.......##.....##.##........##........########.####..######..##.....##....##....####..#######..##....##
-INFO  [2015-06-24 17:46:44,524] org.eclipse.jetty.setuid.SetUIDListener: Opened application@47ec7422{HTTP/1.1}{0.0.0.0:8080}
-INFO  [2015-06-24 17:46:44,524] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@14f3c6fc{HTTP/1.1}{0.0.0.0:8081}
-INFO  [2015-06-24 17:46:44,524] org.eclipse.jetty.server.Server: jetty-9.0.7.v20131107
-INFO  [2015-06-24 17:46:44,618] org.quartz.impl.StdSchedulerFactory: Using default implementation for ThreadExecutor
-INFO  [2015-06-24 17:46:44,618] org.quartz.simpl.SimpleThreadPool: Job execution threads will use class loader of thread: main
-INFO  [2015-06-24 17:46:44,649] org.quartz.core.SchedulerSignalerImpl: Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-INFO  [2015-06-24 17:46:44,649] org.quartz.core.QuartzScheduler: Quartz Scheduler v.2.2.1 created.
-INFO  [2015-06-24 17:46:44,649] org.quartz.simpl.RAMJobStore: RAMJobStore initialized.
-INFO  [2015-06-24 17:46:44,649] org.quartz.core.QuartzScheduler: Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-INFO  [2015-06-24 17:46:44,649] org.quartz.impl.StdSchedulerFactory: Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-INFO  [2015-06-24 17:46:44,649] org.quartz.impl.StdSchedulerFactory: Quartz scheduler version: 2.2.1
-INFO  [2015-06-24 17:46:44,649] org.quartz.core.QuartzScheduler: Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-INFO  [2015-06-24 17:46:44,664] de.spinscale.dropwizard.jobs.JobManager: Jobs to run on application start: [class org.chinthaka.dropwizard.jobs.ApplicationStartTestJob]
-INFO  [2015-06-24 17:46:44,820] de.spinscale.dropwizard.jobs.JobManager: Jobs with @Every annotation: [class org.chinthaka.dropwizard.jobs.EveryTestJob]
-INFO  [2015-06-24 17:46:44,820] de.spinscale.dropwizard.jobs.JobManager: Jobs with @On annotation: []
-INFO  [2015-06-24 17:46:45,118] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
-INFO  [2015-06-24 17:46:45,243] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+INFO  [2015-07-12 07:45:29,354] org.eclipse.jetty.setuid.SetUIDListener: Opened application@e3cee7b{HTTP/1.1}{0.0.0.0:8080}
+INFO  [2015-07-12 07:45:29,355] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@797501a{HTTP/1.1}{0.0.0.0:8081}
+INFO  [2015-07-12 07:45:29,359] org.eclipse.jetty.server.Server: jetty-9.2.z-SNAPSHOT
+INFO  [2015-07-12 07:45:29,404] com.xeiam.sundial.ee.SundialInitializerListener: Sundial Initializer Servlet loaded, initializing Scheduler...
+INFO  [2015-07-12 07:45:29,443] org.quartz.core.SchedulerSignalerImpl: Initialized Scheduler Signaler of type: class org.quartz.core.SchedulerSignalerImpl
+INFO  [2015-07-12 07:45:29,450] org.quartz.core.RAMJobStore: RAMJobStore initialized.
+INFO  [2015-07-12 07:45:29,451] org.quartz.plugins.xml.XMLSchedulingDataProcessorPlugin: Initializing XMLSchedulingDataProcessorPlugin Plug-in.
+INFO  [2015-07-12 07:45:29,451] org.quartz.plugins.management.ShutdownHookPlugin: Registering Quartz shutdown hook.
+INFO  [2015-07-12 07:45:29,451] com.xeiam.sundial.plugins.AnnotationJobTriggerPlugin: Initializing AnnotationJobTriggerPlugin Plug-in.
+WARN  [2015-07-12 07:45:29,490] org.quartz.plugins.xml.XMLSchedulingDataProcessor: File named 'jobs.xml' does not exist. This is OK if you don't want to use an XML job config file.
+INFO  [2015-07-12 07:45:29,491] org.quartz.plugins.xml.XMLSchedulingDataProcessor: Adding 0 jobs, 0 triggers.
+INFO  [2015-07-12 07:45:29,491] com.xeiam.sundial.plugins.AnnotationJobTriggerPlugin: Loading annotated jobs from org.chinthaka.dropwizard.jobs.
+INFO  [2015-07-12 07:45:29,491] org.quartz.classloading.CascadingClassLoadHelper: Package: 'org.chinthaka.dropwizard.jobs' becomes Resource: 'jar:file:/home/jack/CourseProject/dropwizard-jdbi-template/target/dropwizard-jdbi-template-1.0-SNAPSHOT.jar!/org/chinthaka/dropwizard/jobs'
+INFO  [2015-07-12 07:45:29,861] com.xeiam.sundial.plugins.AnnotationJobTriggerPlugin: Scheduled job: name: 'MyJob', Job Class: org.chinthaka.dropwizard.jobs.MyJob, description: null isConcurrencyAllowed: false, jobDataMap: empty with trigger: Trigger 'MyJob-Trigger',  triggerClass: CronTriggerImpl, jobName: MyJob, jobDataMap: empty, calendar: null, misfireInstruction: 0, priority: 5, nextFireTime: Sun Jul 12 00:45:30 PDT 2015, cronEx: 0/5 * * * * ?, timeZone: America/Los_Angeles
+INFO  [2015-07-12 07:45:29,862] org.quartz.QuartzScheduler: Scheduler started.
+INFO  [2015-07-12 07:45:29,872] com.xeiam.sundial.ee.SundialInitializerListener: Sundial Scheduler has been started...
+INFO  [2015-07-12 07:45:30,442] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
 
     DELETE  /user/{userId} (org.chinthaka.dropwizard.resources.UserResourceImpl)
     GET     /user/{userId} (org.chinthaka.dropwizard.resources.UserResourceImpl)
     PUT     /user (org.chinthaka.dropwizard.resources.UserResourceImpl)
 
-INFO  [2015-06-24 17:46:45,852] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@24d09c1{/,null,AVAILABLE}
-INFO  [2015-06-24 17:46:45,852] io.dropwizard.setup.AdminEnvironment: tasks = 
+INFO  [2015-07-12 07:45:30,447] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@2a76840c{/,null,AVAILABLE}
+INFO  [2015-07-12 07:45:30,452] io.dropwizard.setup.AdminEnvironment: tasks = 
 
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
-INFO  [2015-06-24 17:46:45,883] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@2d1dee39{/,null,AVAILABLE}
-INFO  [2015-06-24 17:46:46,102] org.eclipse.jetty.server.ServerConnector: Started application@47ec7422{HTTP/1.1}{0.0.0.0:8080}
-INFO  [2015-06-24 17:46:46,102] org.eclipse.jetty.server.ServerConnector: Started admin@14f3c6fc{HTTP/1.1}{0.0.0.0:8081}
-INFO  [2015-06-24 17:46:46,820] org.eclipse.jetty.server.ServerConnector: Stopped application@47ec7422{HTTP/1.1}{0.0.0.0:8080}
-INFO  [2015-06-24 17:46:46,836] org.eclipse.jetty.server.ServerConnector: Stopped admin@14f3c6fc{HTTP/1.1}{0.0.0.0:8081}
-INFO  [2015-06-24 17:46:46,836] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@2d1dee39{/,null,UNAVAILABLE}
-INFO  [2015-06-24 17:46:46,836] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@24d09c1{/,null,UNAVAILABLE}
-INFO  [2015-06-24 17:46:46,962] org.quartz.core.QuartzScheduler: Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
-INFO  [2015-06-24 17:46:46,962] org.quartz.core.QuartzScheduler: Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
-INFO  [2015-06-24 17:46:47,445] org.quartz.core.QuartzScheduler: Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
+INFO  [2015-07-12 07:45:30,461] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@623e088f{/,null,AVAILABLE}
+INFO  [2015-07-12 07:45:30,473] org.eclipse.jetty.server.ServerConnector: Started application@e3cee7b{HTTP/1.1}{0.0.0.0:8080}
+INFO  [2015-07-12 07:45:30,480] org.eclipse.jetty.server.ServerConnector: Started admin@797501a{HTTP/1.1}{0.0.0.0:8081}
+INFO  [2015-07-12 07:45:30,480] org.eclipse.jetty.server.Server: Started @3310ms
+INFO  [2015-07-12 07:45:37,182] org.quartz.plugins.management.ShutdownHookPlugin: Shutting down Quartz...
+INFO  [2015-07-12 07:45:37,182] org.quartz.QuartzScheduler: Scheduler shutting down...
+INFO  [2015-07-12 07:45:37,183] org.quartz.QuartzScheduler: Scheduler paused.
+INFO  [2015-07-12 07:45:37,193] org.quartz.QuartzScheduler: Scheduler shutdown complete.
+INFO  [2015-07-12 07:45:37,198] org.eclipse.jetty.server.ServerConnector: Stopped application@e3cee7b{HTTP/1.1}{0.0.0.0:8080}
+INFO  [2015-07-12 07:45:37,214] org.eclipse.jetty.server.ServerConnector: Stopped admin@797501a{HTTP/1.1}{0.0.0.0:8081}
+INFO  [2015-07-12 07:45:37,217] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@623e088f{/,null,UNAVAILABLE}
+INFO  [2015-07-12 07:45:37,225] com.xeiam.sundial.ee.SundialInitializerListener: Sundial Scheduler successful shutdown.
+INFO  [2015-07-12 07:45:37,225] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@2a76840c{/,null,UNAVAILABLE}
